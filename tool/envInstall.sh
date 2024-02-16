@@ -6,7 +6,7 @@
 go build .
 
 # 执行默认操作
-./tool/lnovpn
+./lnovpn
 
 # 商业版专用搭建vpn脚本，社区版不提供
 # ./vpnInstall.sh
