@@ -24,10 +24,15 @@
 # 使用教程
 ## 环境安装
 openssl、go(1.21.6版本以上)、gcc、make
-### debian12环境安装教程
+### debian环境安装教程
 ```bash
 # 安装软件包
-sudo apt install gcc make openssl
+sudo apt install gcc make openssl wget
+```
+### centos环境安装教程
+```bash
+# 安装软件包
+sudo yum install gcc make openssl wget
 ```
 ## 安装
 ```bash
