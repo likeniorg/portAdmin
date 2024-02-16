@@ -30,7 +30,7 @@ sudo apt install gcc make openssl
 ```
 ## 安装
 ```bash
-./envInstall
+./tool/envInstall
 ```
 
 ## 恢复初始化环境(删除生成的文件)
