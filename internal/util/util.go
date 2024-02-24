@@ -57,3 +57,11 @@ func GetCertString(certPath string) (certString string) {
 	}
 	return string(data)
 }
+
+// 输出条件消息，返回一个字符串
+func InputMsg(outMsg string) string {
+	fmt.Println(outMsg)
+	inputMsg := ""
+	fmt.Scanln(&inputMsg)
+	return inputMsg
+}

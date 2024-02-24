@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"lnovpn/internal/account"
-	"lnovpn/internal/cfg"
-	"lnovpn/internal/util"
+	"portAdmin/internal/account"
+	"portAdmin/internal/cfg"
+	"portAdmin/internal/util"
 
 	"os"
 	"time"

@@ -162,13 +162,11 @@ func WinShell(dst string) (string, error) {
 }
 
 func ReadMsg(conn net.Conn) string {
-	time.Sleep(300 * time.Millisecond)
 	input := bufio.NewScanner(conn)
 	input.Scan()
 	return input.Text()
 }
 func WriteMsg(conn net.Conn, msg string) error {
-	time.Sleep(300 * time.Millisecond)
 	write := bufio.NewWriter(conn)
 	_, err := write.Write([]byte(msg + "\n"))
 	if err != nil {
@@ -290,7 +288,6 @@ func main() {
 			if err != nil {
 				fmt.Printf("Error disconnecting VPN: %v\n", err)
 			}
-
 			// 退出程序
 			os.Exit(0)
 		}()

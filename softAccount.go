@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"lnovpn/internal/cfg"
 	"os"
+	"portAdmin/internal/cfg"
 	"strconv"
 	"time"
 )

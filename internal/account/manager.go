@@ -2,8 +2,8 @@ package account
 
 import (
 	"encoding/json"
-	"lnovpn/internal/cfg"
-	"lnovpn/internal/util"
+	"portAdmin/internal/cfg"
+	"portAdmin/internal/util"
 
 	"os"
 	"time"

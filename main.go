@@ -3,9 +3,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"lnovpn/internal/account"
-	"lnovpn/internal/cfg"
-	"lnovpn/internal/util"
+	"portAdmin/internal/account"
+	"portAdmin/internal/cfg"
+	"portAdmin/internal/util"
 	"time"
 
 	"os"
@@ -19,6 +19,13 @@ func init() {
 	_, err := os.Stat(cfg.AccountFile)
 	if err != nil {
 		os.Mkdir("conf", 0700)
+		is := util.InputMsg("是否需要导入配置文件(y/n)")
+		if is == "y" {
+			fmt.Println("请将配置文件移动到conf目录")
+			os.Exit(0)
+		} else {
+			fmt.Println("不导入配置文件，正在新建......")
+		}
 		if os.IsNotExist(err) {
 			err := os.WriteFile(cfg.AccountFile, []byte(`null`), 0600)
 			if err != nil {

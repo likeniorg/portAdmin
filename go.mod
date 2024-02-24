@@ -1,5 +1,5 @@
-module lnovpn
+module portAdmin
 
-go 1.21.5
+go 1.19
 
-require golang.org/x/sys v0.16.0
+require golang.org/x/sys v0.17.0

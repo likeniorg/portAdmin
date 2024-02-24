@@ -4,10 +4,10 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"lnovpn/internal/account"
-	"lnovpn/internal/cfg"
-
 	"log/slog"
+	"portAdmin/internal/account"
+	"portAdmin/internal/cfg"
+
 	"net"
 	"os"
 	"os/exec"
@@ -131,14 +131,12 @@ func linuxShell(dst string) error {
 }
 
 func msgRead(conn net.Conn) string {
-	time.Sleep(300 * time.Millisecond)
 	input := bufio.NewScanner(conn)
 	input.Scan()
 	return input.Text()
 }
 
 func msgWrite(conn net.Conn, msg string) error {
-	time.Sleep(300 * time.Millisecond)
 	write := bufio.NewWriter(conn)
 	_, err := write.Write([]byte(msg + "\n"))
 	if err != nil {
@@ -179,7 +177,7 @@ func verifyCliID(conn net.Conn, id, hostID string) (startTime, endTime, lastLogi
 					}
 					return m.Accounts[i].StartTime.String(), m.Accounts[i].EndTime.String(), m.Accounts[i].LastLoginTime.String(), m.Accounts[i].Grade, nil
 				}
-
+				defer conn.Close()
 				return
 
 			}
